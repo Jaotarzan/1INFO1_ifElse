@@ -10,9 +10,20 @@
     */
     
     //Entrada
+    let horas = Number(prompt(`Informe quantos horas durou o evento`).trim());
+    let pessoas = Number(prompt(`Informe quantas pessoas auxiliaram no evento`).trim());
 
 
     //Processamento
+    if (pessoas * 100 + horas * 300 > 2000) {
+        document.write(`O valor total do evento será R$${(pessoas * 100 + horas * 300 - 800).toFixed(2).replace(".",",")}`)
+    }
+    else if (pessoas * 100 + horas * 300 > 1500) {
+        document.write(`O valor total do evento será R$${(pessoas * 100 + horas * 300 - 600).toFixed(2).replace(".",",")}`)
+    }
+    else {
+        document.write(`O valor total do evento será R$${(pessoas * 100 + horas * 300).toFixed(2).replace(".",",")}`)
+    }
 
 
     //Saída

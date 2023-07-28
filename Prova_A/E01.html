@@ -6,9 +6,19 @@
     */
     
     //Entrada
-
+    const aluno = Number(prompt(`Informe em quem voce deseja votar. 1-João 0-Maria`).trim())
+    const aluno1 = Number(prompt(`Informe em quem voce deseja votar. 1-João 0-Maria`).trim())
+    const aluno2 = Number(prompt(`Informe em quem voce deseja votar. 1-João 0-Maria`).trim())
+    const aluno3 = Number(prompt(`Informe em quem voce deseja votar. 1-João 0-Maria`).trim())
+    const aluno4 = Number(prompt(`Informe em quem voce deseja votar. 1-João 0-Maria`).trim())
 
     //Processamento
+    if (aluno + aluno1 + aluno2 + aluno3 + aluno4 >= 3) {
+        document.write(`O lider escolhido foi o João com ${aluno + aluno1 + aluno2 + aluno3 + aluno4} votos`)
+    }
+    else {
+        document.write(`O lider escolhido foi o Maria com ${(5 - (aluno + aluno1 + aluno2 + aluno3 + aluno4))} votos`)
+    }
 
 
     //Saída

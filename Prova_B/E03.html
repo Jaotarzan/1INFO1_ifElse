@@ -6,11 +6,51 @@
     Considere que, se a quantidade for superior a 80 conjuntos, 5 serão doados pelos vendedores. Se a quantidade for superior a 100 conjuntos, 10 serão doados pelos vendedores.
     Calcule o valor total da compra em cada loja e apresente ao usuário qual loja possui o menor valor total da compra.
     */
-    
+
     //Entrada
+    let loja1 = Number(prompt(`Informe o preço do conjunto na primeira loja.`).trim().replace(",", "."));
+    let loja2 = Number(prompt(`Informe o preço do conjunto na segunda loja.`).trim().replace(",", "."));
+    let loja3 = Number(prompt(`Informe o preço do conjunto na terceira loja.`).trim().replace(",", "."));
+    let conjuntos = Number(prompt(`Informe quantos conjuntos deseja comprar`).trim());
 
 
     //Processamento
+    if (Number.isNaN(conjuntos) || !Number.isInteger(conjuntos) || Number.isNaN(loja1) || Number.isNaN(loja2) || Number.isNaN(loja3)) {
+        document.write(`Valores inválidos`);
+    }
+    else if (conjuntos > 100) {
+        if ((conjuntos - 10) * loja1 <= (conjuntos - 10) * loja2 && (conjuntos - 10) * loja1 < (conjuntos - 10) * loja3) {
+            document.write(`A primeira loja tem o menor custo total. Sendo o total R$${((conjuntos - 10) * loja1).toFixed(2).replace(".",",")}`);
+        }
+        else if ((conjuntos - 10) * loja2 < (conjuntos - 10) * loja1 && (conjuntos - 10) * loja2 <= (conjuntos - 10) * loja3) {
+            document.write(`A segunda loja tem o menor custo total. Sendo o total R$${((conjuntos - 10) * loja2).toFixed(2).replace(".",",")}`);
+        }
+        else if ((conjuntos - 10) * loja3 < (conjuntos - 10) * loja2 && (conjuntos - 10) * loja3 <= (conjuntos - 10) * loja3) {
+            document.write(`A terceira loja tem o menor custo total. Sendo o total R$${((conjuntos - 10) * loja1).toFixed(2).replace(".",",")}`);
+        }
+    }
+    else if (conjuntos > 80) {
+        if ((conjuntos - 5) * loja1 <= (conjuntos - 5) * loja2 && (conjuntos - 5) * loja1 < (conjuntos - 5) * loja3) {
+            document.write(`A primeira loja tem o menor custo total. Sendo o total R$${((conjuntos - 5) * loja1).toFixed(2).replace(".",",")}`);
+        }
+        else if ((conjuntos - 5) * loja2 < (conjuntos - 5) * loja1 && (conjuntos - 5) * loja2 <= (conjuntos - 5) * loja3) {
+            document.write(`A segunda loja tem o menor custo total. Sendo o total R$${((conjuntos - 5) * loja2).toFixed(2).replace(".",",")}`);
+        }
+        else if ((conjuntos - 5) * loja3 < (conjuntos - 5) * loja2 && (conjuntos - 5) * loja3 <= (conjuntos - 5) * loja3) {
+            document.write(`A terceira loja tem o menor custo total. Sendo o total R$${((conjuntos - 5) * loja1).toFixed(2).replace(".",",")}`);
+        }
+    }
+    else {
+        if ((conjuntos) * loja1 <= (conjuntos) * loja2 && (conjuntos) * loja1 < (conjuntos) * loja3) {
+            document.write(`A primeira loja tem o menor custo total. Sendo o total R$${((conjuntos) * loja1).toFixed(2).replace(".",",")}`);
+        }
+        else if ((conjuntos) * loja2 < (conjuntos) * loja1 && (conjuntos) * loja2 <= (conjuntos) * loja3) {
+            document.write(`A segunda loja tem o menor custo total. Sendo o total R$${((conjuntos) * loja2).toFixed(2).replace(".",",")}`);
+        }
+        else if ((conjuntos) * loja3 < (conjuntos) * loja2 && (conjuntos) * loja3 <= (conjuntos) * loja3) {
+            document.write(`A terceira loja tem o menor custo total. Sendo o total R$${((conjuntos) * loja1).toFixed(2).replace(".",",")}`);
+        }
+    } 
 
 
     //Saída

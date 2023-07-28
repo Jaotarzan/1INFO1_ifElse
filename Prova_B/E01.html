@@ -9,10 +9,36 @@
     */
     
     //Entrada
-
+    let compiuter = Number(prompt(`Informe quantos computadores deseja comprar`).trim());
+    let tipo = prompt(`informe se deseja pagar em dinheiro. S-sim/N-não`).trim().toLowerCase();
 
     //Processamento
 
+    if (tipo == "n") {
+        if (compiuter > 10) {
+            document.write(`Você deverá pagar R$${(compiuter * 1500 * 0.85).toFixed(2).replace(".",",")}`);
+        }
+        else if (compiuter > 5) {
+            document.write(`Você deverá pagar R$${(compiuter * 1500 * 0.9).toFixed(2).replace(".",",")}`);
+        }
+        else {
+            document.write(`Você deverá pagar R$${(compiuter * 1500).toFixed(2).replace(".",",")}`);
+        }
+    }
+    else if (tipo == "s") {
+        if (compiuter > 10) {
+            document.write(`Você deverá pagar R$${(compiuter * 1500 * 0.8).toFixed(2).replace(".",",")}`);
+        }
+        else if (compiuter > 5) {
+            document.write(`Você deverá pagar R$${(compiuter * 1500 * 0.85).toFixed(2).replace(".",",")}`);
+        }
+        else {
+            document.write(`Você deverá pagar R$${(compiuter * 1500 * 0.95).toFixed(2).replace(".",",")}`);
+        }
+    }
+    else {
+        document.write(`Valores inválidos`)
+    }
 
     //Saída
 

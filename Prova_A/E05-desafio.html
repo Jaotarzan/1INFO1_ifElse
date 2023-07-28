@@ -11,10 +11,33 @@
     */
     
     //Entrada
+    let preco = Number(prompt(`Informe o preço do veiculo.`).trim().replace(",", "."));
+    let parcelas = Number(prompt(`Informe quantas parcelas deseja`).trim());
+    let entrada = Number(prompt(`Informe a entrada que você dará no veículo.`).trim().replace(",", "."));
 
 
     //Processamento
-
+    if (Number.isNaN(preco) || Number.isNaN(parcelas) || !Number.isInteger(parcelas)) {
+        document.write(`Valores inválidos`)
+    }
+    else if (parcelas > 12) {
+        if ((preco - entrada) / parcelas * 1.1 > 1000) {
+            let parcelamento = prompt(`informe se deseja aumentar o número de parcelas para diminuir o preço de cada. S-sim/N-não`).trim().toLowerCase();
+            if (parcelamento == "s") {
+                parcelas = Number(prompt(`Informe quantas parcelas deseja`).trim());
+            }
+        }
+        document.write(`o preço de cada parcela do veículo será R$${((preco - entrada) / parcelas * 1.1).toFixed(2).replace(".", ",")}`)
+    }
+    else {
+        if ((preco - entrada) / parcelas * 1.1 > 1000) {
+            let parcelamento = prompt(`informe se deseja aumentar o número de parcelas para diminuir o preço de cada. S-sim/N-não`).trim().toLowerCase();
+            if (parcelamento == "s") {
+                parcelas = Number(prompt(`Informe quantas parcelas deseja`).trim());
+            }
+            document.write(`o preço de cada parcela do veículo será R$${((preco - entrada) / parcelas).toFixed(2).replace(".", ",")}`)
+        }
+    }
 
     //Saída
 

@@ -11,9 +11,38 @@
     */
     
     //Entrada
-
+    let dinheiro = Number(prompt(`Informe quanto você recebe por mês.`).trim().replace(",","."));
+    let auxilio = prompt(`informe se deseja o auxilio transporte. S-sim/N-não`).trim().toLowerCase();
 
     //Processamento
+    if (auxilio == "s") {
+        if (dinheiro >= 6000) {
+            document.write(`O seu salário líquido será R$${(dinheiro * 0.64).toFixed(2).replace(".",",")}`);
+        }
+        else if (dinheiro >= 3500) {
+            document.write(`O seu salário líquido será R$${(dinheiro * 0.74).toFixed(2).replace(".",",")}`);
+        }
+        else if (dinheiro >= 2000) {
+            document.write(`O seu salário líquido será R$${(dinheiro * 0.84).toFixed(2).replace(".",",")}`);
+        }
+        else {
+            document.write(`O seu salário líquido será R$${(dinheiro * 0.94).toFixed(2).replace(".",",")}`);
+        }
+    }
+    else {
+        if (dinheiro >= 6000) {
+            document.write(`O seu salário líquido será R$${(dinheiro * 0.7).toFixed(2).replace(".",",")}`);
+        }
+        else if (dinheiro >= 3500) {
+            document.write(`O seu salário líquido será R$${(dinheiro * 0.8).toFixed(2).replace(".",",")}`);
+        }
+        else if (dinheiro >= 2000) {
+            document.write(`O seu salário líquido será R$${(dinheiro * 0.9).toFixed(2).replace(".",",")}`);
+        }
+        else {
+            document.write(`O seu salário líquido será R$${(dinheiro).toFixed(2).replace(".",",")}`);
+        }
+    }
 
 
     //Saída

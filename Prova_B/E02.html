@@ -9,9 +9,22 @@
     */
     
     //Entrada
-
+    let residencia = Number(prompt(`Informe quantos litros são consumidos em sua residência.`).trim().replace(",","."));
+    let pessoas = Number(prompt(`Informe quantas pessoas residem em sua residêcia.`).trim());
 
     //Processamento
+    if (Number.isNaN(pessoas) || Number.isNaN(residencia) || !Number.isInteger(pessoas)) {
+        document.write(`Valores inválidos`);
+    }
+    else if (residencia / pessoas > 500) {
+        document.write(`A sua tarifa de água será penalizada em 30%`)
+    }
+    else if (residencia / pessoas > 300) {
+        document.write(`A sua tarifa de água será penalizada em 15%`)
+    }
+    else {
+        document.write(`Parabéns por seu consumo consciente`)
+    }
 
 
     //Saída

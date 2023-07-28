@@ -7,9 +7,17 @@
     */
     
     //Entrada
+    let gasto = Number(prompt(`Informe quanto você gasta por dia em refeições.`).trim().replace(",","."));
+    let dias = Number(prompt(`Informe quantos dias da semana você come na instituição`).trim());
 
 
     //Processamento
+    if (gasto * dias * 4 > 500) {
+        document.write(`você está gastando demais reveja seus gastos`)
+    }
+    else {
+        document.write(`você está dentro do gasto esperado`)
+    }
 
 
     //Saída

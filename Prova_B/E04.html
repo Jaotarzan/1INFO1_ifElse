@@ -10,10 +10,20 @@
     */
     
     //Entrada
+    let autonomia = Number(prompt(`Informe a autonomia de seu veículo.`).trim().replace(",","."));
 
 
     //Processamento
-
+    if (Number.isNaN(autonomia)) {
+        document.write(`Valor inválido`)
+    }
+    else if (1100 / autonomia * 5.99 > 200) {
+        document.write(`O seu custo mensal de combustível é R$${(1100 / autonomia * 5.99).toFixed(2).replace(".",",")}.  A melho opção eé se mudar para Araquari`)
+    }
+    else {
+        document.write(`O seu custo mensal de combustível é R$${(1100 / autonomia * 5.99).toFixed(2).replace(".",",")}.  A melho opção é continuar residindo em Joinville`)
+    }
+   
 
     //Saída
 
